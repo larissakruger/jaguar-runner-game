@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+:root {
+  --bg: #ffffff;
+  --text: gray;
+  --gray: rgba(128, 128, 128, 0.4);
+  --footer: #888;
+  --overlay: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --bg: #1b1b1b;
+  --text: #f3f3f3;
+  --gray: rgba(255, 255, 255, 0.4);
+  --footer: #ccc;
+  --overlay: rgba(255, 255, 255, 0.15);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   user-select: none;
@@ -12,14 +28,42 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: "Press Start 2P", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  color: gray;
+  background: var(--bg);
+  color: var(--text);
 }
 
+/* BOTÃO DE TEMA */
+.theme-btn {
+  position: absolute;
+  top: 1vmin;
+  left: 1vmin;
+  width: 7vmin;
+  height: 7vmin;
+  cursor: pointer;
+  user-select: none;
+  z-index: 50;
+}
+
+.theme-btn:active {
+  transform: scale(0.9);
+}
+
+/* ÁREA DO JOGO */
 .world {
   overflow: hidden;
   position: relative;
+  width: 100vw;
+  height: 45vh;
+  background: var(--bg);
+}
+
+/* PONTUAÇÃO & TELAS */
+.high-score {
+  position: absolute;
+  font-size: 3vmin;
+  right: 25vmin;
+  top: 1vmin;
+  color: var(--gray);
 }
 
 .score {
@@ -31,7 +75,30 @@ body {
 
 .start-screen {
   position: absolute;
+  font-size: 3vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text);
+  line-height: 1.7;
+  user-select: none;
+  pointer-events: none;
+}
+
+
+.game-over {
+  position: absolute;
   font-size: 5vmin;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text);
+}
+
+.restart-icon {
+  position: absolute;
+  height: 7vmin;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -41,12 +108,13 @@ body {
   display: none;
 }
 
+/* TERRENO / JAGUAR / CACTOS */
 .terreno {
   --left: 0;
   position: absolute;
   width: 300%;
   bottom: 0;
-  left: calc(var(--left) * 1%)
+  left: calc(var(--left) * 1%);
 }
 
 .jaguar {
@@ -62,4 +130,16 @@ body {
   left: calc(var(--left) * 1%);
   height: 30%;
   bottom: 0;
+}
+
+
+/* FOOTER */
+.footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5vmin;
+  color: var(--footer);
+  white-space: nowrap;
 }

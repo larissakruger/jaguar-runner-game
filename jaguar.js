@@ -4,6 +4,8 @@ import {
   getCustomProperty,
 } from "./updateCustomProperty.js"
 
+import { jumpSound } from "./script.js" 
+
 const jaguarElem = document.querySelector("[data-jaguar]")
 const JUMP_SPEED = 0.5
 const GRAVITY = 0.0015
@@ -69,4 +71,7 @@ function onJump(e) {
 
   yVelocity = JUMP_SPEED
   isJumping = true
+  
+  jumpSound.currentTime = 0 
+  jumpSound.play() 
 }

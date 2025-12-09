@@ -9,12 +9,26 @@
   <script src="script.js" type="module"></script>
 </head>
 <body>
+
   <div class="world" data-world>
+    <img id="theme-btn" class="theme-btn" src="img/tema.png" alt="Alterar tema">
+
+    <div class="game-over hide" data-game-over>GAME OVER</div>
+    
+    <div class="high-score" data-high-score>HI 00000</div>
     <div class="score" data-score>0</div>
-    <div class="start-screen" data-start-screen>Pressione qualquer tecla para iniciar!</div>
-    <img src="img/terreno.png" class="terreno" data-terreno>
-	<img src="img/terreno.png" class="terreno" data-terreno>
-    <img src="img/jaguar-parado.png" class="jaguar" data-jaguar>
+    
+    <div class="start-screen" data-start-screen>Pressione qualquer tecla para iniciar <br> --- <br> Use ESPAÇO para pular</div>
+    
+    <img class="restart-icon hide" data-restart-icon src="img/restart-button.png" alt="Restart">
+      <img src="img/terreno.png" class="terreno" data-terreno>
+	    <img src="img/terreno.png" class="terreno" data-terreno> 
+      <img src="img/jaguar-parado.png" class="jaguar" data-jaguar>
+  </div>
+</div>
+  
+  <div class="footer">
+    Desenvolvido por Larissa Kruger * Inspirado no Chrome T-Rex Runner
   </div>
 </body>
 </html>

@@ -5,7 +5,7 @@ import {
 } from "./updateCustomProperty.js"
 
 const SPEED = 0.05
-const CACTO_INTERVAL_MIN = 750
+const CACTO_INTERVAL_MIN = 500
 const CACTO_INTERVAL_MAX = 2500
 const worldElem = document.querySelector("[data-world]")
 
